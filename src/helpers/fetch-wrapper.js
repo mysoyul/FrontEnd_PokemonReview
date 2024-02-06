@@ -19,7 +19,8 @@ function request(method) {
         }
         console.log('>>> requestOptions')
         console.log(requestOptions)
-        return fetch(url, requestOptions).then(handleResponse);
+        return fetch(url, requestOptions)
+                .then(handleResponse);
     }
 }
 
