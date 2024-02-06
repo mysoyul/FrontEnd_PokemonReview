@@ -4,6 +4,7 @@ import * as Yup from 'yup';
 
 import { useAuthStore } from '@/stores';
 
+//schema 정의
 const schema = Yup.object().shape({
     username: Yup.string().required('Username is required'),
     password: Yup.string().required('Password is required')
