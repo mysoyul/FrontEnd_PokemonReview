@@ -1,5 +1,5 @@
 <template>
-    <h1>Users</h1>
+    <h1>Pokemons</h1>
     <router-link to="/pokemons/add" class="btn btn-sm btn-success mb-2">Add Pokemon</router-link>
     <table class="table table-striped">
         <thead>
@@ -11,7 +11,7 @@
         </thead>
         <tbody>
             <template v-if="pokemons.length > 0">
-                <div>{{ params.pageNo }} /{{ pageCount }}</div>
+                <div>{{ params.pageNo }} / {{ pageCount }}</div>
                 <tr v-for="pokemon in pokemons" :key="pokemon.id">
                     <td>{{ pokemon.name }}</td>
                     <td>{{ pokemon.type }}</td>
@@ -75,7 +75,7 @@
 </template>
 
 <script setup>
-import { reactive, watch, computed,onMounted } from 'vue';
+import { reactive, watch, computed, onMounted } from 'vue';
 import { storeToRefs } from 'pinia';
 import { usePokemonsStore } from '@/stores';
 
