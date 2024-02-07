@@ -23,6 +23,7 @@ async function onSubmit(values) {
     console.log(values)
     const usersStore = useUsersStore();
     const alertStore = useAlertStore();
+    
     try {
         await usersStore.register(values);
         await router.push('/account/login');
