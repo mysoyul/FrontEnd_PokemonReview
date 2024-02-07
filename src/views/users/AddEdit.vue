@@ -77,13 +77,14 @@ async function onSubmit(values) {
             <div class="form-row">
                 <div class="form-group col">
                     <label>Username</label>
-                    <Field name="username" type="text" class="form-control" :class="{ 'is-invalid': errors.username }" />
+                    <Field name="username" type="text" class="form-control" :class="{ 'is-invalid': errors.username }" 
+                        :disabled="user ? true : false"  />
                     <div class="invalid-feedback">{{ errors.username }}</div>
                 </div>
                 <div class="form-group col">
                     <label>
                         Password
-                        <em v-if="user">(Leave blank to keep the same password)</em>
+                        <!-- <em v-if="user">(Leave blank to keep the same password)</em> -->
                     </label>
                     <Field name="password" type="password" class="form-control" :class="{ 'is-invalid': errors.password }" />
                     <div class="invalid-feedback">{{ errors.password }}</div>
