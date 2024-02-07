@@ -8,6 +8,7 @@ import { useUsersStore, useAlertStore } from '@/stores';
 
 const usersStore = useUsersStore();
 const alertStore = useAlertStore();
+
 const router = useRouter();
 const route = useRoute();
 const id = route.params.id;
