@@ -18,10 +18,10 @@ export const useUsersStore = defineStore({
             this.users = { loading: true };
             try {
                 const queryString = new URLSearchParams(params).toString();
-                const {content, pageSize, totalElements, totalPages } = 
+                const { content, pageSize, totalElements, totalPages } = 
                     await fetchWrapper.get(`${baseUrl}/admin/users?${queryString}`);
                 this.users = content;   
-                this.pageInfo = {pageSize, totalElements, totalPages}
+                this.pageInfo = { pageSize, totalElements, totalPages }
             } catch (error) {
                 this.users = { error };
             }
