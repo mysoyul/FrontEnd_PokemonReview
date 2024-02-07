@@ -30,10 +30,10 @@ export const usePokemonsStore = defineStore({
             this.pokemons = { loading: true };
             try {
                 const queryString = new URLSearchParams(params).toString();
-                const {content, pageSize, totalElements, totalPages } = 
+                const { content, pageSize, totalElements, totalPages } = 
                     await fetchWrapper.get(`${baseUrl}/pokemon?${queryString}`);
                 this.pokemons = content;   
-                this.pageInfo = {pageSize, totalElements, totalPages}
+                this.pageInfo = { pageSize, totalElements, totalPages }
             } catch (error) {
                 const alertStore = useAlertStore();
                 alertStore.error(error);
